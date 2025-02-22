@@ -1,0 +1,15 @@
+test -> integração
+install -> unitários + integração
+package -> unitários
+
+testes unitários correm sempre! (excepto no test)
+integração só corre em produção
+
+como sabem o que correr?
+	surefire -  "...Test"
+	failsafe - integração "...IT"
+
+usar Mock não precisa de implementação real
+TDD
+
+true integration -> testes já quase pronto para produção
