@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfcb8e9-a8ef-410f-b790-62ba0d589ae8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../lab2/lab2_2 notes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/src/main/java/org/example/IStockmarketService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/src/main/java/org/example/Stock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/src/main/java/org/example/StocksPortfolio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/src/test/java/StocksPortfolioTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/classes/org/example/IStockmarketService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/classes/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/classes/org/example/Stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/classes/org/example/StocksPortfolio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/surefire-reports/TEST-org.example.StocksPortfolioTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/surefire-reports/org.example.StocksPortfolioTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab2/target/test-classes/org/example/StocksPortfolioTest.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab2/lab2_2conversion/src/main/java/org/example/ISimpleHttpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab2/lab2_2conversion/src/main/java/org/example/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab2/lab2_2conversion/src/main/java/org/example/ProductFinderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab2/lab2_2conversion/src/test/java/conversionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,25 +19,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2tP62Msz7HCOJLfjfxFxjQB34Zt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/brupez/Desktop/2ºSemestre/TQS/Práticas/TQS_68264/lab1/lab1_1",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brupez/Desktop/2ºSemestre/TQS/Práticas/TQS_68264/lab1/lab1_1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,6 +55,15 @@
       <option name="presentableId" value="Default" />
       <updated>1740241155025</updated>
       <workItem from="1740241156145" duration="26000" />
+      <workItem from="1740242346921" duration="19000" />
+      <workItem from="1740243733619" duration="12000" />
+      <workItem from="1740243755387" duration="8000" />
+      <workItem from="1740243836614" duration="16000" />
+      <workItem from="1740243867492" duration="10000" />
+      <workItem from="1740243896744" duration="26000" />
+      <workItem from="1740243945214" duration="7000" />
+      <workItem from="1740244916064" duration="4000" />
+      <workItem from="1740246659708" duration="17000" />
     </task>
     <servers />
   </component>
