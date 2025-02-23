@@ -1,5 +1,7 @@
 package org.example;
 
+import java.io.IOException;
+
 public interface ISimpleHttpClient {
-    String doHttpGet(String url);
+    public String doHttpGet(String url) throws IOException;
 }

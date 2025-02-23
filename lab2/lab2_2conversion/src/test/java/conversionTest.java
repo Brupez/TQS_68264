@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 
+import java.io.IOException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +32,7 @@ public class conversionTest {
     }
 
     @Test
-    void testHTTPResponse_ValidProduct() {
+    void testHTTPResponse_ValidProduct() throws IOException {
         int productId = 3;
         String jsonResponse = """
             {
@@ -62,7 +63,7 @@ public class conversionTest {
 
     @DisplayName("findProductDetails(300) returns no Product")
     @Test
-    void testFindProductDetails_NoProduct() {
+    void testFindProductDetails_NoProduct() throws IOException {
 
         when(httpClient.doHttpGet("https://fakestoreapi.com/products/300")).thenReturn("");
 

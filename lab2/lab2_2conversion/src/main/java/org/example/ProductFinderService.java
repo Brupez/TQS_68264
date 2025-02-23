@@ -14,7 +14,7 @@ public class ProductFinderService{
         this.httpClient = httpClient;
     }
 
-    public Optional<Product> findProductDetails(int id) {
+    public Optional<Product> findProductDetails(int id) throws IOException {
 
         String jsonResponse = httpClient.doHttpGet(API_Products + id);
         if (jsonResponse.isEmpty()) {
