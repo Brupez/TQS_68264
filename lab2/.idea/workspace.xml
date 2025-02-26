@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4036b7af-13f3-48c5-9429-a09fd531e034" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/lab2_2 notes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IStockmarketService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Stock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StocksPortfolio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StocksPortfolioTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/IStockmarketService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/StocksPortfolio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.example.StocksPortfolioTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.example.StocksPortfolioTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/StocksPortfolioTest.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TP/TQS TP01-Unit testing and coverage.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TP/TQS TP02-Unit testing and mocking.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TP/TQS TP03-Multilayer testing in Spring Boot.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/lab2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/.idea/lab2_2conversion.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/src/main/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2_2conversion/src/test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2tP2h5VeI5gKTRo01rJKQGxzQJA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,11 +37,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven. [clean].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/brupez/Desktop/2ºSemestre/TQS/Práticas/TQS_68264/lab2",
+    "last_opened_file_path": "/home/bruno-lopes/Desktop/TQS/TQS_68264",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,10 +50,15 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,6 +76,11 @@
       <option name="presentableId" value="Default" />
       <updated>1740239504846</updated>
       <workItem from="1740239506119" duration="626000" />
+      <workItem from="1740396322907" duration="13000" />
+      <workItem from="1740396340042" duration="290000" />
+      <workItem from="1740397892422" duration="243000" />
+      <workItem from="1740398357216" duration="92000" />
+      <workItem from="1740575788900" duration="11000" />
     </task>
     <servers />
   </component>
