@@ -58,6 +58,7 @@
 
 ### In which conditions will it be used?
 - It is used when we want to run integration tests with a simulated database MySQL.
+- create-drop is used to create the database schema and drop it when the application is closed every time each test is run.
 
 ## f) the sample project demonstrates three test strategies to assess an API (C, D and E) developed with SpringBoot. Which are the main/key differences?
 - `C` is a unit test that tests the controller and the service layer, but it mocks the repository layer.
