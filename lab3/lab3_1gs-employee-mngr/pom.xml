@@ -42,11 +42,12 @@
         </dependency>
 
         <!-- in-memory h2 database -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+        -->
 
         <!-- mysql db; if needed for persistence -->
         <dependency>

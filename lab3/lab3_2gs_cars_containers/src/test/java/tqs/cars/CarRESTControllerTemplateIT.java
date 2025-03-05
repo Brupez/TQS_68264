@@ -1,20 +1,19 @@
-package tqsdemo.employeemngr.employee;
+package tqs.cars;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
-import tqsdemo.employeemngr.data.Employee;
-import tqsdemo.employeemngr.data.EmployeeRepository;
+import tqs.cars.data.CarRepository;
+import tqs.cars.model.Car;
 
 import java.util.List;
 
@@ -22,12 +21,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 // porta aleatoria para diminuir conflitos entre outras portas
 // Springboot completa menos o server em si
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 // @AutoConfigureTestDatabase
-
-// switch AutoConfigureTestDatabase with TestPropertySource to use a real database
-@TestPropertySource(locations = "application-integrationtest.properties")
-class E_EmployeeRestControllerTemplateIT {
+@TestPropertySource(locations = "classpath:application-test.properties")
+public class CarRESTControllerTemplateIT {
 
     // will need to use the server port for the invocation url
     @LocalServerPort
@@ -39,7 +36,7 @@ class E_EmployeeRestControllerTemplateIT {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private EmployeeRepository repository;
+    private CarRepository repository;
 
     // clean up the database after each test, clean-state
     // but its not always usefull, because we can have tests that depend on the state of the database like finding an employee by name
@@ -50,33 +47,31 @@ class E_EmployeeRestControllerTemplateIT {
 
 
     @Test
-    void whenValidInput_thenCreateEmployee() {
-        Employee bob = new Employee("bob", "bob@deti.com");
-        restTemplate.postForEntity("/api/employees", bob, Employee.class);
+    void whenValidInput_thenCreateCar() {
+        Car car1 = new Car("Honda", "X5");
+        restTemplate.postForEntity("/api/cars", car1, Car.class);
 
-        List<Employee> found = repository.findAll();
-        assertThat(found).extracting(Employee::getName).containsOnly("bob");
+        List<Car> found = repository.findAll();
+        assertThat(found).extracting(Car::getMaker).contains("Honda");
     }
 
     @Test
-    void givenEmployees_whenGetEmployees_thenStatus200() {
-        createTestEmployee("bob", "bob@deti.com");
-        createTestEmployee("alex", "alex@deti.com");
+    void givenCars_whenGetCars_thenStatus200() {
+        createTestCar("honda", "X5");
+        createTestCar("Mercedes", "Class B");
 
 
-        ResponseEntity<List<Employee>> response = restTemplate
-                .exchange("/api/employees", HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {
+        ResponseEntity<List<Car>> response = restTemplate
+                .exchange("/api/cars", HttpMethod.GET, null, new ParameterizedTypeReference<>() {
                 });
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).extracting(Employee::getName).containsExactly("bob", "alex");
+        assertThat(response.getBody()).extracting(Car::getMaker).contains("honda");
 
     }
 
-
-    private void createTestEmployee(String name, String email) {
-        Employee emp = new Employee(name, email);
-        repository.saveAndFlush(emp);
+    private void createTestCar(String maker, String model) {
+        Car car1 = new Car(maker, model);
+        repository.saveAndFlush(car1);
     }
-
 }
