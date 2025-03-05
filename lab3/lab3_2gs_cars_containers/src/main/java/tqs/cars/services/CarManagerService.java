@@ -28,6 +28,6 @@ public class CarManagerService {
     }
 
     public Optional<Car> getCarDetails(Long carId) {
-        return Optional.of(carRepository.findByCarId(carId) );
+        return carRepository.findByCarId(carId);
     }
 }

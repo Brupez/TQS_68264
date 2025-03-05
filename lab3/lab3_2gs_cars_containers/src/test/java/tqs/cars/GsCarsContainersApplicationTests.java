@@ -4,25 +4,31 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import tqs.cars.data.CarRepository;
 import tqs.cars.model.Car;
+import tqs.cars.services.CarManagerService;
 
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-@TestPropertySource(properties = "spring.jpa.hibernate.ddl-auto=create") // note the TestPropertySource to enforce the ddl generation!
+@TestPropertySource(properties = "spring.jpa.hibernate.ddl-auto=create") // note the TestPropertySource to enforce the ddl generation
+// Mock Car Service
 class GsCarsContainersApplicationTests {
 
     // instantiate the container passing selected config
@@ -38,6 +44,7 @@ class GsCarsContainersApplicationTests {
 
     @Autowired
     private CarRepository repository;
+
 
     // read configuration from running db
     @DynamicPropertySource
@@ -64,14 +71,12 @@ class GsCarsContainersApplicationTests {
                 .build()
                 .toUriString();
 
-        //TODO: test the Cars API
-
+        given()
+                .when()
+                .get(endpoint)
+                .then()
+                .statusCode(200)
+                .body("maker", equalTo("kia"))
+                .body("model", equalTo("stinger"));
     }
-    
-    @Test
-    void CarController_WithMockServiceTest() {
-
-
-    }
-
 }

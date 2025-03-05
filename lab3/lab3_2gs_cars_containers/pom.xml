@@ -61,6 +61,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- for DataTestJPA tests with a DB memory -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
