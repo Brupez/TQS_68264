@@ -24,6 +24,4 @@ public class Book {
     public Date getPublished() {
         return published;
     }
-
-
 }
