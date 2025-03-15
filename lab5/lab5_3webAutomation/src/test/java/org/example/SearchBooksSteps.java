@@ -4,15 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.seljup.SeleniumJupiter;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
 
 import java.util.logging.Logger;
 
@@ -22,16 +15,6 @@ import static java.util.logging.Logger.getLogger;
 public class SearchBooksSteps {
     private WebDriver driver;
     static final Logger log = getLogger(String.valueOf(lookup().lookupClass()));
-
-    @BeforeEach
-    public void setup() {
-        driver = new ChromiumDriver();
-    }
-
-    @Given("I am on the library homepage")
-    public void iAmOnTheSite() {
-        driver.get("https://cover-bookstore.onrender.com/");
-    }
 
 
     @When("I enter {string} in the search bar")
