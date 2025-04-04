@@ -203,7 +203,7 @@
                 <version>3.0.0-M6</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/*Test.java</exclude>
+                        <exclude>**/functional/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>
