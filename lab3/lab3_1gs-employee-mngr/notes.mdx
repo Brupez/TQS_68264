@@ -1,0 +1,22 @@
+## Lab 3_1
+
+- Postman vai usar a BD para testar (aponta para o endpoint) e é à mão (muito tempo)
+- Postman percorre todas as camadas
+- A app Springboot corre web-server para testar (tomcat-> servidor apache)
+- Client REST apontamos o endpoint onde queremos testar~
+
+- Smoke Tests -> testes
+- Beans -> Mock de componentes (fingir que é um componente) -> @MockBean
+
+
+- (Lab3_1)Top - Down -> Testar a camada de cima para baixo, começar a construir da camada de baixo
+- Bottom - Up -> Testar a camada de baixo para cima
+
+- Junit e mockito traz com o spring-boot-start-test
+- starters são importadores de outras dependências
+
+## Lab 3_2
+- comecar o controller e testar o controller e assim sucessivamente
+- criar um metodo que sugira um carro parecido que só não vai só com uma query de pesquisa no CarManagerService (onde está a lógica de problema)
+- Testar algoritmo que itera sobre a lista de carros e devolve o carro mais parecido (test scope C -> test unitario normal em encapsulo )
+- o que faço para os testes é o que é preciso para produção

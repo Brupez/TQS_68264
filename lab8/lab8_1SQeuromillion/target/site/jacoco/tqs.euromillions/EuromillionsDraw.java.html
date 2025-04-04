@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EuromillionsDraw.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">euromillions-play</a> &gt; <a href="index.source.html" class="el_package">tqs.euromillions</a> &gt; <span class="el_source">EuromillionsDraw.java</span></div><h1>EuromillionsDraw.java</h1><pre class="source lang-java linenums">package tqs.euromillions;
+
+import java.util.ArrayList;
+
+/**
+ * Models an Euromillions draw. Contains the solution and allows to check for
+ * matched numbers and stars.
+ *
+ * @author ico
+ */
+public class EuromillionsDraw {
+
+    private final Dip drawResults;
+
+    /**
+     * Creates a new draw assuming the given solution.
+     *
+     * @param drawResults the given solution is used
+     */
+<span class="fc" id="L20">    public EuromillionsDraw(Dip drawResults) {</span>
+<span class="fc" id="L21">        this.drawResults = drawResults;</span>
+<span class="fc" id="L22">    }</span>
+
+    /**
+     * Creates a new draw from a random solution.
+     *
+     * @return new instance
+     */
+    static public EuromillionsDraw generateRandomDraw() {
+<span class="nc" id="L30">        return new EuromillionsDraw(Dip.generateRandomDip());</span>
+    }
+
+    /**
+     * Find the numbers and start matches.
+     *
+     * @param playCoupon the user sheet
+     * @return an array of dips containing only the numbers and starts that
+     * are also present in the draw
+     */
+    public ArrayList&lt;Dip&gt; findMatchesFor(CuponEuromillions playCoupon) {
+
+<span class="fc" id="L42">        ArrayList&lt;Dip&gt; results = new ArrayList&lt;Dip&gt;();</span>
+        Dip workingDip;
+
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        for (Dip dipUnderAnalysis : playCoupon) {</span>
+<span class="fc" id="L46">            workingDip = new Dip();</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">            for (int number : dipUnderAnalysis.getNumbersColl()) {</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (drawResults.getNumbersColl().contains(number)) {</span>
+<span class="fc" id="L49">                    workingDip.getNumbersColl().add(number);</span>
+                }
+<span class="fc" id="L51">            }</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            for (int star : dipUnderAnalysis.getStarsColl()) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">                if (drawResults.getStarsColl().contains(star)) {</span>
+<span class="fc" id="L54">                    workingDip.getStarsColl().add(star);</span>
+                }
+<span class="fc" id="L56">            }</span>
+<span class="fc" id="L57">            results.add(workingDip);</span>
+<span class="fc" id="L58">        }</span>
+<span class="fc" id="L59">        return results;</span>
+    }
+
+    public Dip getDrawResults() {
+<span class="nc" id="L63">        return drawResults;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

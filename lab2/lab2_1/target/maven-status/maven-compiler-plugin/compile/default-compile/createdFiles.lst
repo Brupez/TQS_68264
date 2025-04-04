@@ -1,0 +1,4 @@
+org/example/Main.class
+org/example/StocksPortfolio.class
+org/example/Stock.class
+org/example/IStockmarketService.class

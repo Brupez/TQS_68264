@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DemoMain.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">euromillions-play</a> &gt; <a href="index.source.html" class="el_package">tqs</a> &gt; <span class="el_source">DemoMain.java</span></div><h1>DemoMain.java</h1><pre class="source lang-java linenums">package tqs;
+
+
+import tqs.euromillions.CuponEuromillions;
+import tqs.euromillions.Dip;
+import tqs.euromillions.EuromillionsDraw;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import static java.lang.invoke.MethodHandles.lookup;
+
+/**
+ * demonstrates a client for random euromillions bets
+ */
+<span class="nc" id="L14">public class DemoMain {</span>
+<span class="nc" id="L15">    static final Logger log = LoggerFactory.getLogger(lookup().lookupClass());</span>
+
+    public static void main(String[] args) {
+
+        // simulate a coupon with three user bets
+<span class="nc" id="L20">        CuponEuromillions myBet = new CuponEuromillions();</span>
+<span class="nc" id="L21">        myBet.appendDip(Dip.generateRandomDip());</span>
+<span class="nc" id="L22">        myBet.appendDip(Dip.generateRandomDip());</span>
+<span class="nc" id="L23">        myBet.appendDip(Dip.generateRandomDip());</span>
+<span class="nc" id="L24">        log.info(&quot;Betting with three random bets \n{} &quot;, myBet.format());</span>
+
+        // simulate a random draw
+<span class="nc" id="L27">        EuromillionsDraw draw = EuromillionsDraw.generateRandomDraw();</span>
+<span class="nc" id="L28">        log.info(&quot;Draw results:\n{}&quot;, draw.getDrawResults().format() );</span>
+
+        //report results
+<span class="nc" id="L31">        log.info(&quot;You scored (matches): &quot;);</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        for (Dip dip : draw.findMatchesFor(myBet)) {</span>
+<span class="nc" id="L33">           log.info( dip.format());</span>
+<span class="nc" id="L34">        }</span>
+<span class="nc" id="L35">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

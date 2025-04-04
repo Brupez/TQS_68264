@@ -1,0 +1,167 @@
+version: "3.8"
+services:
+  data_generator:
+    build: ./dataGenerator
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+      PYTHONUNBUFFERED: 1
+    networks:
+      - backend
+    volumes:
+      - ./dataGenerator:/dataGenerator
+
+  db_pg:
+    image: postgres:16.1
+    environment:
+      # Default user is postgres
+      POSTGRES_DB: smarthomes
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - backend
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  influx:
+    image: influxdb:2.7
+    environment:
+      DOCKER_INFLUXDB_INIT_USERNAME: influx
+      DOCKER_INFLUXDB_INIT_PASSWORD: influx_smarthomes
+      DOCKER_INFLUXDB_INIT_ORG: smarthomes
+      DOCKER_INFLUXDB_INIT_BUCKET: smarthomes
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: smarthomes
+    healthcheck:
+      test: "curl -f http://localhost:8086/ping"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - backend
+    volumes:
+      - influx_data:/var/lib/influxdb2
+
+  influxcli:
+    links:
+      - influx
+    image: influxdb:2.7
+    entrypoint: influx setup --bucket smarthomes -t smarthomes -o smarthomes --username=influx --password=influx_smarthomes --host=http://influx:8086 -f
+    depends_on:
+      influx:
+        condition: service_healthy
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3
+    environment:
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+      RABBITMQ_DEFAULT_USER: rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+
+  backend_spring:
+    depends_on:
+      db_pg:
+        condition: service_healthy
+      influx:
+        condition: service_healthy
+      influxcli:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    build: ./backend
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
+      interval: 2s
+      timeout: 2s
+      retries: 100
+      start_period: 2s
+    environment:
+      SPRING_APPLICATION_JSON: '{
+          "spring.datasource.url" : "jdbc:postgresql://db_pg:5432/smarthomes",
+          "spring.datasource.username" : "postgres",
+          "spring.datasource.password" : "postgres",
+          "spring.jpa.hibernate.ddl-auto" : "update",
+          "spring.influx.url" : "http://influx:8086",
+          "spring.influx.user" : "influx",
+          "spring.influx.password" : "influx_smarthomes",
+          "spring.influx.database" : "smarthomes",
+          "spring.influx.token" : "smarthomes",
+          "spring.influx.bucket" : "smarthomes",
+          "spring.influx.org" : "smarthomes",
+          "spring.rabbitmq.host" : "rabbitmq",
+          "spring.rabbitmq.port" : "5672",
+          "spring.rabbitmq.username" : "rabbitmq",
+          "spring.rabbitmq.password" : "rabbitmq",
+          "spring.rabbitmq.queue.json.name" : "smarthomes",
+          "spring.rabbitmq.routing.json.key" : "smarthomes_routing_json_key",
+          "management.influx.metrics.export.enabled": "false",
+          "smarthomes.app.jwtSecret" : "========smarthomes====JwtGenerator====secret========",
+          "smarthomes.app.jwtExpirationMs": "14400000",
+          "generation.rate": "5",
+          "springdoc.api-docs.path": "/api/docs-config",
+          "springdoc.swagger-ui.url": "/api/docs-config",
+          "springdoc.swagger-ui.path": "/api/docs/index.html"
+        }'
+    restart: unless-stopped
+    networks:
+      - backend
+    volumes:
+      - ./backend:/api
+      - maven_data:/root/.m2
+
+  app:
+    depends_on:
+      backend_spring:
+        condition: service_healthy
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - NEXT_PUBLIC_HOST_URL=localhost
+    volumes:
+      - ./frontend:/frontend
+      - pnpm_modules:/frontend/node_modules
+    networks:
+      - frontend
+
+  proxy:
+    image: nginx:1.25.3
+    ports:
+      - 80:80
+    depends_on:
+      app:
+        condition: service_started
+      backend_spring:
+        condition: service_healthy
+    networks:
+      - backend
+      - frontend
+    restart: unless-stopped
+    volumes:
+      - ./proxy/default.conf:/etc/nginx/conf.d/default.conf
+
+volumes:
+  pnpm_modules:
+  influx_data:
+  maven_data:
+  pg_data:
+
+
+networks:
+  backend:
+  frontend:

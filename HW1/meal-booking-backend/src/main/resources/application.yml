@@ -1,0 +1,26 @@
+server:
+  port: 3001
+
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/mealreservation
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+openweathermap:
+  api:
+      key: ${OPEN_WEATHERMAP_API_KEY}
+      url: https://api.openweathermap.org/data/2.5
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+# http://localhost:3001/swagger-ui/index.html

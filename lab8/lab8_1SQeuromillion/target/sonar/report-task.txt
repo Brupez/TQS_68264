@@ -1,0 +1,6 @@
+projectKey=Euro-milh-es
+serverUrl=http://localhost:9001
+serverVersion=25.3.0.104237
+dashboardUrl=http://localhost:9001/dashboard?id=Euro-milh-es
+ceTaskId=43bcf2e5-cce0-412e-9626-d3a8a6c3f1f4
+ceTaskUrl=http://localhost:9001/api/ce/task?id=43bcf2e5-cce0-412e-9626-d3a8a6c3f1f4

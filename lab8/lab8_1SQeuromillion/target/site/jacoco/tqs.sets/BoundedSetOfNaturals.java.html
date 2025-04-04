@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoundedSetOfNaturals.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">euromillions-play</a> &gt; <a href="index.source.html" class="el_package">tqs.sets</a> &gt; <span class="el_source">BoundedSetOfNaturals.java</span></div><h1>BoundedSetOfNaturals.java</h1><pre class="source lang-java linenums">package tqs.sets;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Objects;
+
+/**
+ * offers a bounded set data structure, thus complying with:
+ * - the set is created for a maximum number of elements (bounded to a limit), but can contain less
+ * - no duplicate values allowed
+ * - order of elements is not relevant
+ * - assuming natural numbers (non-negatives)
+ */
+public class BoundedSetOfNaturals implements Iterable&lt;Integer&gt; {
+
+    private ArrayList&lt;Integer&gt; collection;
+    private int maxSize;
+
+    public void add(int element) {
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if (this.collection.size() &gt;= maxSize) {</span>
+<span class="nc" id="L21">            throw new IllegalArgumentException(&quot;bounded set is full. no more elements allowed.&quot;);</span>
+        }
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (this.collection.contains(element)) {</span>
+<span class="fc" id="L24">            throw new IllegalArgumentException(&quot;duplicate value: &quot; + element);</span>
+        }
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (element &lt;= 0) {</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException(&quot;Illegal argument: not a natural number&quot;);</span>
+        }
+
+<span class="fc" id="L31">        collection.add(element);</span>
+
+<span class="fc" id="L33">    }</span>
+
+    public void add(int[] numbers) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int number : numbers) {</span>
+<span class="fc" id="L37">            this.add(number);</span>
+        }
+<span class="fc" id="L39">    }</span>
+
+<span class="fc" id="L41">    public BoundedSetOfNaturals(int maxSize) {</span>
+<span class="fc" id="L42">        this.maxSize = maxSize;</span>
+<span class="fc" id="L43">        this.collection = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L44">    }</span>
+
+    /**
+     * create a new instance initialized with the values passed as argument.
+     * The maxSize would be the size of the array
+     *
+     * @param values elements to initialize this new Set
+     * @return the new Set
+     */
+    public static BoundedSetOfNaturals fromArray(int[] values) {
+<span class="fc" id="L54">        BoundedSetOfNaturals newSet = new BoundedSetOfNaturals(values.length);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        for (int element : values) {</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (element &lt;= 0) {</span>
+<span class="nc" id="L57">                throw new IllegalArgumentException(&quot;All elements must be natural numbers&quot;);</span>
+            }
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">            if (newSet.collection.contains(element)) {</span>
+<span class="nc" id="L60">                throw new IllegalArgumentException(&quot;Duplicate value: &quot; + element);</span>
+            }
+<span class="fc" id="L62">            newSet.collection.add(element);</span>
+        }
+<span class="fc" id="L64">        return newSet;</span>
+    }
+
+
+
+
+    public int size() {
+<span class="fc" id="L71">        return this.collection.size();</span>
+    }
+
+
+    public boolean intersects(BoundedSetOfNaturals subset) {
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        for (Integer element : subset) {</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">            if (this.contains(element)) {</span>
+<span class="nc" id="L78">                return true;</span>
+            }
+<span class="nc" id="L80">        }</span>
+<span class="nc" id="L81">        return false;</span>
+    }
+
+    public boolean contains(Integer element) {
+<span class="fc" id="L85">        return collection.contains(element);</span>
+    }
+
+    @Override
+    public Iterator&lt;Integer&gt; iterator() {
+<span class="fc" id="L90">        return collection.iterator();</span>
+    }
+
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L96">        int hash = 7;</span>
+<span class="nc" id="L97">        hash = 67 * hash + Objects.hashCode(this.collection);</span>
+<span class="nc" id="L98">        return hash;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L104">            return true;</span>
+        }
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L107">            return false;</span>
+        }
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L110">            return false;</span>
+        }
+
+<span class="fc" id="L113">        final BoundedSetOfNaturals other = (BoundedSetOfNaturals) obj;</span>
+<span class="fc" id="L114">        return Objects.equals(this.collection, other.collection);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Dip.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">euromillions-play</a> &gt; <a href="index.source.html" class="el_package">tqs.euromillions</a> &gt; <span class="el_source">Dip.java</span></div><h1>Dip.java</h1><pre class="source lang-java linenums">package tqs.euromillions;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Arrays;
+import java.util.Objects;
+
+import tqs.sets.BoundedSetOfNaturals;
+
+import java.util.Random;
+
+/**
+ * A set of 5 numbers and 2 starts according to the Euromillions ranges.
+ *
+ * @author ico0
+ */
+public class Dip {
+<span class="fc" id="L18">    static Random generator = new Random();</span>
+    public static final int NUMBERS_RANGE_MAX = 50;
+    public static final int STARS_RANGE_MAX = 10;
+    public static final int NUMBERS_REQUIRED = 5;
+    public static final int STARS_REQUIRED = 2;
+    private BoundedSetOfNaturals numbers;
+    private BoundedSetOfNaturals stars;
+
+<span class="fc" id="L26">    public Dip() {</span>
+<span class="fc" id="L27">        numbers = new BoundedSetOfNaturals(NUMBERS_REQUIRED);</span>
+<span class="fc" id="L28">        stars = new BoundedSetOfNaturals(STARS_REQUIRED);</span>
+<span class="fc" id="L29">    }</span>
+
+    public Dip(int[] arrayOfNumbers, int[] arrayOfStarts) {
+<span class="fc" id="L32">        this();</span>
+
+       // code to check ranges
+<span class="fc bfc" id="L35" title="All 6 branches covered.">       if( ! Arrays.stream(arrayOfNumbers).allMatch( nr -&gt; nr &gt;= 1 &amp;&amp; nr &lt;= NUMBERS_RANGE_MAX) ){</span>
+<span class="fc" id="L36">            throw new IllegalArgumentException(&quot;numbers set are outside the expected range!&quot;);</span>
+        }
+
+<span class="pc bpc" id="L39" title="1 of 6 branches missed.">        if( ! Arrays.stream(arrayOfStarts).allMatch(nr -&gt; nr &gt;= 1 &amp;&amp; nr &lt;= STARS_RANGE_MAX) ){</span>
+<span class="fc" id="L40">            throw new IllegalArgumentException(&quot;numbers set are outside the expected range!&quot;);</span>
+        }
+
+
+<span class="pc bpc" id="L44" title="1 of 4 branches missed.">        if (NUMBERS_REQUIRED == arrayOfNumbers.length &amp;&amp; STARS_REQUIRED == arrayOfStarts.length) {</span>
+<span class="fc" id="L45">            numbers.add(arrayOfNumbers);</span>
+<span class="fc" id="L46">            stars.add(arrayOfStarts);</span>
+        } else {
+<span class="fc" id="L48">            throw new IllegalArgumentException(&quot;wrong number of elements in numbers/stars&quot;);</span>
+        }
+
+<span class="fc" id="L51">    }</span>
+
+    public BoundedSetOfNaturals getNumbersColl() {
+<span class="fc" id="L54">        return numbers;</span>
+    }
+
+    public BoundedSetOfNaturals getStarsColl() {
+<span class="fc" id="L58">        return stars;</span>
+    }
+
+    public static Dip generateRandomDip()  {
+
+
+<span class="fc" id="L64">        Dip randomDip = new Dip();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (int i = 0; i &lt; NUMBERS_REQUIRED; ) {</span>
+<span class="fc" id="L66">            int candidate = generator.nextInt(NUMBERS_RANGE_MAX) + 1;</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">            if (!randomDip.getNumbersColl().contains(candidate)) {</span>
+<span class="fc" id="L68">                randomDip.getNumbersColl().add(candidate);</span>
+<span class="fc" id="L69">                i++;</span>
+            }
+<span class="fc" id="L71">        }</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        for (int i = 0; i &lt; STARS_REQUIRED; ) {</span>
+<span class="fc" id="L73">            int candidate = generator.nextInt(STARS_RANGE_MAX) + 1;</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">            if (!randomDip.getStarsColl().contains(candidate)) {</span>
+<span class="fc" id="L75">                randomDip.getStarsColl().add(candidate);</span>
+<span class="fc" id="L76">                i++;</span>
+            }
+<span class="fc" id="L78">        }</span>
+<span class="fc" id="L79">        return randomDip;</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L84">        int hash = 3;</span>
+<span class="nc" id="L85">        hash = 29 * hash + Objects.hashCode(this.numbers);</span>
+<span class="nc" id="L86">        hash = 29 * hash + Objects.hashCode(this.stars);</span>
+<span class="nc" id="L87">        return hash;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L93">            return true;</span>
+        }
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L96">            return false;</span>
+        }
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L99">            return false;</span>
+        }
+<span class="fc" id="L101">        final Dip other = (Dip) obj;</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">        if (!Objects.equals(this.numbers, other.numbers)) {</span>
+<span class="nc" id="L103">            return false;</span>
+        }
+<span class="fc" id="L105">        return Objects.equals(this.stars, other.stars);</span>
+    }
+
+
+    /**
+     * prepares a string representation of the data structure, formated for
+     * printing
+     *
+     * @return formatted string with data
+     */
+    public String format() {
+<span class="fc" id="L116">        StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L117">        sb.append(&quot;N[&quot;);</span>
+<span class="fc bfc" id="L118" title="All 2 branches covered.">        for (int number : getNumbersColl()) {</span>
+<span class="fc" id="L119">            sb.append(String.format(&quot;%3d&quot;, number));</span>
+<span class="fc" id="L120">        }</span>
+<span class="fc" id="L121">        sb.append(&quot;] S[&quot;);</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        for (int star : getStarsColl()) {</span>
+            // the formating codes were missing
+<span class="fc" id="L124">            sb.append(String.format(&quot;%3d&quot;, star));</span>
+<span class="fc" id="L125">        }</span>
+<span class="fc" id="L126">        sb.append(&quot;]&quot;);</span>
+<span class="fc" id="L127">        return sb.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,19 @@
+{
+  "editor.formatOnSave": true,
+  "git.autofetch": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./frontend"
+    }
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "java.compile.nullAnalysis.mode": "disabled"
+}

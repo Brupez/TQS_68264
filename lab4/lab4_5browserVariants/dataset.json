@@ -1,0 +1,632 @@
+{
+    "Legumes": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "110453961261751",
+                "Name": "Água",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 0,
+                    "Proteínas": 0,
+                    "Hidratos de carbono": 0,
+                    "Gorduras": 0
+                },
+                "Marca": "Luso",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/agua-1l.png",
+                "Preço": 0.3
+            }
+        ]
+    },
+    "Bebidas": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "899027316327959",
+                "Name": "Maçã",
+                "Unidade de medida": "kg",
+                "NutriScore": "B",
+                "Informação nutricional": {
+                    "Calorias": 52,
+                    "Proteínas": 0.3,
+                    "Hidratos de carbono": 13.8,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Continente",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/maca-1kg.png",
+                "Preço": 1.8
+            }
+        ]
+    },
+    "Frutas": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "572797523223784",
+                "Name": "Água",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 0,
+                    "Proteínas": 0,
+                    "Hidratos de carbono": 0,
+                    "Gorduras": 0
+                },
+                "Marca": "Luso",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/agua-1l.png",
+                "Preço": 0.3
+            }
+        ]
+    },
+    "Carne": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "794763043616148",
+                "Name": "Cerveja",
+                "Unidade de medida": "L",
+                "NutriScore": "D",
+                "Informação nutricional": {
+                    "Calorias": 43,
+                    "Proteínas": 0.5,
+                    "Hidratos de carbono": 3.6,
+                    "Gorduras": 0
+                },
+                "Marca": "Sagres",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cerveja-1l.png",
+                "Preço": 1.2
+            }
+        ]
+    },
+    "Peixe": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "965011450050241",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Lacticínios": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "798058932963042",
+                "Name": "Cerveja",
+                "Unidade de medida": "L",
+                "NutriScore": "D",
+                "Informação nutricional": {
+                    "Calorias": 43,
+                    "Proteínas": 0.5,
+                    "Hidratos de carbono": 3.6,
+                    "Gorduras": 0
+                },
+                "Marca": "Sagres",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cerveja-1l.png",
+                "Preço": 1.2
+            }
+        ]
+    },
+    "Pão": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "631472158589043",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Cereais": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "742836406108685",
+                "Name": "Maçã",
+                "Unidade de medida": "kg",
+                "NutriScore": "B",
+                "Informação nutricional": {
+                    "Calorias": 52,
+                    "Proteínas": 0.3,
+                    "Hidratos de carbono": 13.8,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Continente",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/maca-1kg.png",
+                "Preço": 1.8
+            }
+        ]
+    },
+    "Azeite": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "964370433053009",
+                "Name": "Cerveja",
+                "Unidade de medida": "L",
+                "NutriScore": "D",
+                "Informação nutricional": {
+                    "Calorias": 43,
+                    "Proteínas": 0.5,
+                    "Hidratos de carbono": 3.6,
+                    "Gorduras": 0
+                },
+                "Marca": "Sagres",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cerveja-1l.png",
+                "Preço": 1.2
+            }
+        ]
+    },
+    "Óleo": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "686836060808798",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Vinagre": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "158855194649577",
+                "Name": "Água",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 0,
+                    "Proteínas": 0,
+                    "Hidratos de carbono": 0,
+                    "Gorduras": 0
+                },
+                "Marca": "Luso",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/agua-1l.png",
+                "Preço": 0.3
+            }
+        ]
+    },
+    "Sal": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "655878394939101",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Açúcar": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "830205185285944",
+                "Name": "Maçã",
+                "Unidade de medida": "kg",
+                "NutriScore": "B",
+                "Informação nutricional": {
+                    "Calorias": 52,
+                    "Proteínas": 0.3,
+                    "Hidratos de carbono": 13.8,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Continente",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/maca-1kg.png",
+                "Preço": 1.8
+            }
+        ]
+    },
+    "Especiarias": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "457231176725241",
+                "Name": "Maçã",
+                "Unidade de medida": "kg",
+                "NutriScore": "B",
+                "Informação nutricional": {
+                    "Calorias": 52,
+                    "Proteínas": 0.3,
+                    "Hidratos de carbono": 13.8,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Continente",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/maca-1kg.png",
+                "Preço": 1.8
+            }
+        ]
+    },
+    "Ervas Aromáticas": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "627510287342417",
+                "Name": "Água",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 0,
+                    "Proteínas": 0,
+                    "Hidratos de carbono": 0,
+                    "Gorduras": 0
+                },
+                "Marca": "Luso",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/agua-1l.png",
+                "Preço": 0.3
+            }
+        ]
+    },
+    "Café": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "377039237239965",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Chá": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "156243820275841",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Água": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "312562712560062",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Refrigerantes": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "364636759535039",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Sumos": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "874954846283624",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Cerveja": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "881451677090330",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Vinho": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "304247591790689",
+                "Name": "Cerveja",
+                "Unidade de medida": "L",
+                "NutriScore": "D",
+                "Informação nutricional": {
+                    "Calorias": 43,
+                    "Proteínas": 0.5,
+                    "Hidratos de carbono": 3.6,
+                    "Gorduras": 0
+                },
+                "Marca": "Sagres",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cerveja-1l.png",
+                "Preço": 1.2
+            }
+        ]
+    },
+    "Bebidas Espirituosas": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "263628451258263",
+                "Name": "Cerveja",
+                "Unidade de medida": "L",
+                "NutriScore": "D",
+                "Informação nutricional": {
+                    "Calorias": 43,
+                    "Proteínas": 0.5,
+                    "Hidratos de carbono": 3.6,
+                    "Gorduras": 0
+                },
+                "Marca": "Sagres",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cerveja-1l.png",
+                "Preço": 1.2
+            }
+        ]
+    },
+    "Produtos de Limpeza": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "743867317616673",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Higiene Pessoal": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "824338502811159",
+                "Name": "Maçã",
+                "Unidade de medida": "kg",
+                "NutriScore": "B",
+                "Informação nutricional": {
+                    "Calorias": 52,
+                    "Proteínas": 0.3,
+                    "Hidratos de carbono": 13.8,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Continente",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/maca-1kg.png",
+                "Preço": 1.8
+            }
+        ]
+    },
+    "Higiene para Bebé": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "547075193922921",
+                "Name": "Água",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 0,
+                    "Proteínas": 0,
+                    "Hidratos de carbono": 0,
+                    "Gorduras": 0
+                },
+                "Marca": "Luso",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/agua-1l.png",
+                "Preço": 0.3
+            }
+        ]
+    },
+    "Charcutaria": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "399874184168057",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Queijo": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "357269551413030",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    },
+    "Conservas": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "869677812310752",
+                "Name": "Leite",
+                "Unidade de medida": "L",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 42,
+                    "Proteínas": 3.4,
+                    "Hidratos de carbono": 5.0,
+                    "Gorduras": 1.0
+                },
+                "Marca": "Agros",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/leite-1l.png",
+                "Preço": 0.9
+            }
+        ]
+    },
+    "Congelados": {
+        "Subcategorias": [],
+        "Produtos": [
+            {
+                "EAN": "980143302561935",
+                "Name": "Cenoura",
+                "Unidade de medida": "un",
+                "NutriScore": "A",
+                "Informação nutricional": {
+                    "Calorias": 41,
+                    "Proteínas": 0.9,
+                    "Hidratos de carbono": 9.6,
+                    "Gorduras": 0.2
+                },
+                "Marca": "Pingo Doce",
+                "Modelo": null,
+                "Imagem": "https://www.pingodoce.pt/wp-content/uploads/2020/07/cenoura-1kg-1.png",
+                "Preço": 0.5
+            }
+        ]
+    }
+}

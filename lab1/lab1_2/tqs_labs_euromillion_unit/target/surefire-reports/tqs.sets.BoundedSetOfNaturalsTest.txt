@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: tqs.sets.BoundedSetOfNaturalsTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 0.028 s <<< FAILURE! -- in tqs.sets.BoundedSetOfNaturalsTest
+tqs.sets.BoundedSetOfNaturalsTest.testAddElement -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.IllegalArgumentException: bounded set is full. no more elements allowed.
+	at tqs.sets.BoundedSetOfNaturals.add(BoundedSetOfNaturals.java:21)
+	at tqs.sets.BoundedSetOfNaturalsTest.testAddElement(BoundedSetOfNaturalsTest.java:40)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
