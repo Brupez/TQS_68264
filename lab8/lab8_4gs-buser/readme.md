@@ -28,5 +28,5 @@ Key Recommendations:
 - Use DTOs for request/response handling
 
 
-## e) Code reviews are expected to improve the code and the programmer. How did you feel about
-this last point, especially compared with the experience with SonarQube?
+## e) Code reviews are expected to improve the code and the programmer. How did you feel about this last point, especially compared with the experience with SonarQube?
+- I prefer the SonarQube method to do code review because it's more automated and analyse the code in a more efficient way. The AI suggestions are good but not as accurate as SonarQube which not excludes AI code reviews.
