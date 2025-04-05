@@ -1,9 +1,6 @@
 package ua.tqs.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -11,6 +8,7 @@ import java.time.LocalDate;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class MealDTO {
     // Getters and setters - these are crucial for JSON serialization
     private Long id;

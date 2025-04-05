@@ -12,6 +12,5 @@ import org.junit.platform.suite.api.Suite;
 @SelectClasspathResource("ua/tqs")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "ua.tqs")
 public class CucumberTest {
-
 }
 

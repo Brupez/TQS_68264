@@ -26,10 +26,13 @@ public class BookingService {
     }
 
     public Booking cancelBooking(Long id, String email) {
-        Booking booking = bookingRepository.findByIdAndEmail(id, email)
-                .orElseThrow(() -> new RuntimeException("Booking not found"));
-        booking.setStatus(BookingStatus.CANCELLED);
-        return bookingRepository.save(booking);
+        List<Booking> booking = bookingRepository.findByIdAndEmail(id, email);
+        if (booking.isEmpty()) {
+            throw new RuntimeException("Booking not found");
+        }
+        Booking bookingCanceled = booking.get(0);
+        bookingCanceled.setStatus(BookingStatus.CANCELLED);
+        return bookingRepository.save(bookingCanceled);
     }
     public Booking deleteBooking(Long id) {
         Booking booking = bookingRepository.findById(id)
