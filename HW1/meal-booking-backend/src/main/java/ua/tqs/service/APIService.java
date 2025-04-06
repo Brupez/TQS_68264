@@ -1,6 +1,7 @@
 package ua.tqs.service;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -8,8 +9,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 
 @Service
-@Slf4j
 public class APIService {
+    private static final Logger logger = LoggerFactory.getLogger(APIService.class);
+
     @Value("${openweathermap.api.key}")
     private String apiKey;
 
@@ -26,7 +28,7 @@ public class APIService {
 
     public Map<String, Object> getWeather(String city) {
         try {
-            log.info("Get weather for city: {}", city);
+            logger.info("Get weather for city: {}", city);
             statsService.incrementTotalRequests();
             String url = String.format("%s/forecast?q=%s&appid=%s&units=metric", apiUrl, city, apiKey);
             Map<String, Object> response = restTemplate.getForObject(url, Map.class);
@@ -39,10 +41,9 @@ public class APIService {
             return null;
 
         } catch (Exception e) {
-            log.error("Error fetching weather data: {}", e.getMessage());
+            logger.error("Error fetching weather data: {}", e.getMessage());
             statsService.incrementCacheMisses();
             return null;
         }
     }
-
 }

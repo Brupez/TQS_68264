@@ -1,6 +1,8 @@
 server:
   port: 3001
 
+OPEN_WEATHERMAP_API_KEY: 5960910cf077b066db15640022ad2b32
+
 spring:
   datasource:
     url: jdbc:postgresql://db:5432/mealreservation
@@ -10,14 +12,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
   flyway:
     enabled: true
     locations: classpath:db/migration
-
-openweathermap:
-  api:
-      key: ${OPEN_WEATHERMAP_API_KEY}
-      url: https://api.openweathermap.org/data/2.5
+    validate-migration-naming: true
 
 springdoc:
   api-docs:

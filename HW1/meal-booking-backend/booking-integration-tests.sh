@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Base URL
-BASE_URL="http://localhost/api/bookings"
+BASE_URL="http://localhost:8081/api/bookings"
 
 # Create a new booking
 echo "Creating a new booking..."

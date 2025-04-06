@@ -2,8 +2,7 @@ package integrations;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -18,13 +17,12 @@ import ua.tqs.model.Booking;
 import ua.tqs.model.BookingStatus;
 import ua.tqs.repository.BookingRepository;
 
-import java.time.LocalDateTime;
-
 import static org.hamcrest.Matchers.equalTo;
 
 
 @SpringBootTest(classes = MealReservationApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BookingControllerTestIT {
 
     @Container
@@ -32,6 +30,7 @@ public class BookingControllerTestIT {
             .withUsername("postgres")
             .withPassword("postgres")
             .withDatabaseName("mealreservationTest");
+
 
     String BASE_URL;
 
@@ -53,6 +52,11 @@ public class BookingControllerTestIT {
         BASE_URL = "http://localhost:" + randomServerPort + "/api/bookings";
     }
 
+    @AfterEach
+    void tearDown() {
+        bookingRepository.deleteAll();
+    }
+
     @Test
     void testCreateBooking() {
         Booking booking = new Booking();
@@ -70,6 +74,7 @@ public class BookingControllerTestIT {
                 .body("restaurant", equalTo(booking.getRestaurant()))
                 .body("status", equalTo(booking.getStatus().toString()))
                 .body("week", equalTo(booking.getWeek()))
+                .body("createdAt", equalTo(booking.getCreatedAt()));
         ;
     }
 

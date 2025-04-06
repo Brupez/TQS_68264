@@ -1,7 +1,5 @@
 package ua.tqs.service;
 
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.tqs.model.Booking;
 import ua.tqs.model.BookingStatus;
@@ -11,9 +9,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class BookingService {
     private final BookingRepository bookingRepository;
+
+    public BookingService(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
 
     public Booking createBooking(Booking booking) {
         booking.setCreatedAt(LocalDateTime.now());
@@ -34,6 +35,7 @@ public class BookingService {
         bookingCanceled.setStatus(BookingStatus.CANCELLED);
         return bookingRepository.save(bookingCanceled);
     }
+
     public Booking deleteBooking(Long id) {
         Booking booking = bookingRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));

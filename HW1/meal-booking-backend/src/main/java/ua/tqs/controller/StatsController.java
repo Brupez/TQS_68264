@@ -2,7 +2,6 @@ package ua.tqs.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +13,13 @@ import ua.tqs.service.StatsService;
 @RestController
 @RequestMapping("/api/stats")
 @Tag(name = "Stats")
-@AllArgsConstructor
 public class StatsController {
 
     private final StatsService statsService;
+
+    public StatsController(StatsService statsService) {
+        this.statsService = statsService;
+    }
 
     @GetMapping()
     @Operation(summary = "Get stats")
