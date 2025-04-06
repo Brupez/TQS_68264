@@ -5,4 +5,4 @@ Feature: Meal Reservation
     When In restaurant Castro I select the week 13 on day 2
     And I fill in with email "bruno@gmail.com"
     And I click on Book meal button
-    Then I should see the message "Booking successful"
+    Then I should see the message "Booking submitted successfully!"
