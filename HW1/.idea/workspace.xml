@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/ua/tqs/services/BookingServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/resources/db/migration/V001_INIT.sql" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/db.migration/V001_INIT.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/resources/db/migration/V002_DATA.sql" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/db.migration/V002_DATA.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/ua/tqs/functional/BookingMealSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/ua/tqs/functional/BookingMealSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/application.properties" afterDir="false" />
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="cleaning project">
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/integrations/BookingControllerTestIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/integrations/BookingControllerTestIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,35 +46,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.Feature: bookingSteps.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookingControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MealReservationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TestBackendApplication.executor&quot;: &quot;Coverage&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: bookingSteps.executor": "Run",
+    "Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor": "Run",
+    "JUnit.BookingControllerTest.executor": "Run",
+    "JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "Spring Boot.MealReservationApplication.executor": "Run",
+    "Spring Boot.TestBackendApplication.executor": "Coverage",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.1150748",
+    "ts.external.directory.path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/resources" />
@@ -210,11 +203,25 @@
       <workItem from="1743868707466" duration="2523000" />
       <workItem from="1743871628935" duration="1123000" />
       <workItem from="1743873134206" duration="137000" />
+      <workItem from="1743962819757" duration="399000" />
     </task>
+    <task id="LOCAL-00001" summary="cleaning project">
+      <option name="closed" value="true" />
+      <created>1743962997307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743962997307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cleaning project" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning project" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HW1$TestBackendApplication.ic" NAME="TestBackendApplication Coverage Results" MODIFIED="1743870793790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

@@ -75,7 +75,6 @@ public class BookingControllerTestIT {
                 .body("status", equalTo(booking.getStatus().toString()))
                 .body("week", equalTo(booking.getWeek()))
                 .body("createdAt", equalTo(booking.getCreatedAt()));
-        ;
     }
 
 }
