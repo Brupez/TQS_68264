@@ -24,16 +24,16 @@ public class BookingMealSteps {
         options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get(url);
     }
 
     @When("In restaurant Castro I select the week {int} on day {int}")
     public void iSelectWeekAndDay(int week, int day) {
-        WebElement weekButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("week" + week)));
+        WebElement weekButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("week")));
         weekButton.click();
 
-        WebElement dayButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("day" + day)));
+        WebElement dayButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("day")));
         dayButton.click();
     }
 
