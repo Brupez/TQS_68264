@@ -23,7 +23,7 @@ jobs:
       - name: Build with Maven
         run: |
           cd HW1/meal-booking-backend  
-          mvn clean test
+          sudo mvn clean test
 
 #      - name: Run integration tests
 #        run: |
