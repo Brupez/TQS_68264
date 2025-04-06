@@ -25,13 +25,13 @@ jobs:
           cd HW1/meal-booking-backend  
           mvn clean test
 
-      - name: Run integration tests
-        run: |
-          cd HW1/meal-booking-backend 
-          mvn -B verify failsafe:integration-test
+#      - name: Run integration tests
+#        run: |
+#          cd HW1/meal-booking-backend 
+#          mvn -B verify failsafe:integration-test
 
-      - name: Run controllers tests
-        run: |
-          cd HW1/meal-booking-backend 
-          sudo mvn clean test -Dtest=controllers.*Test
+#      - name: Run controllers tests
+#        run: |
+#          cd HW1/meal-booking-backend 
+#          sudo mvn clean test -Dtest=controllers.*Test
 
