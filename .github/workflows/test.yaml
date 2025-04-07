@@ -20,18 +20,13 @@ jobs:
           java-version: '23'  # Specify the Java version you want to use
           distribution: 'temurin'  # Specify the distribution (e.g., 'temurin', 'adopt', etc.)
 
-      - name: Build with Maven
+      - name: Run unit tests
         run: |
           cd HW1/meal-booking-backend  
           sudo mvn clean test
+      - name: Run integration tests
+        run: |
+          cd HW1/meal-booking-backend
+          sudo mvn clean test -Dtest=BookingControllerTestIT
 
-#      - name: Run integration tests
-#        run: |
-#          cd HW1/meal-booking-backend 
-#          mvn -B verify failsafe:integration-test
-
-#      - name: Run controllers tests
-#        run: |
-#          cd HW1/meal-booking-backend 
-#          sudo mvn clean test -Dtest=controllers.*Test
 
