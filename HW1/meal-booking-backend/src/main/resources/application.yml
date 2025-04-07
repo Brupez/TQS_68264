@@ -1,7 +1,10 @@
 server:
   port: 3001
 
-OPEN_WEATHERMAP_API_KEY: 5960910cf077b066db15640022ad2b32
+openweathermap:
+  api:
+    key: 5960910cf077b066db15640022ad2b32
+    url: https://api.openweathermap.org/data/2.5
 
 spring:
   datasource:

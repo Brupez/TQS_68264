@@ -31,9 +31,10 @@ public class BookingService {
         if (booking.isEmpty()) {
             throw new RuntimeException("Booking not found");
         }
-        Booking bookingCanceled = booking.get(0);
-        bookingCanceled.setStatus(BookingStatus.CANCELLED);
-        return bookingRepository.save(bookingCanceled);
+        Booking bookingCancelled = booking.get(0);
+        bookingCancelled.setStatus(BookingStatus.CANCELLED);
+        bookingRepository.delete(bookingCancelled);
+        return bookingCancelled;
     }
 
     public Booking deleteBooking(Long id) {
