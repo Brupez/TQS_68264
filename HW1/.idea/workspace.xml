@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="cleaning project">
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers/RestaurantControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/APIServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/integrations/BookingControllerTestIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/integrations/BookingControllerTestIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +55,8 @@
     "Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor": "Run",
     "JUnit.BookingControllerTest.executor": "Run",
     "JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -63,7 +68,7 @@
     "Spring Boot.TestBackendApplication.executor": "Coverage",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend",
+    "last_opened_file_path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend/src/test/java/services",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,6 +82,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/java/services" />
+      <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/resources" />
     </key>
@@ -204,6 +213,7 @@
       <workItem from="1743871628935" duration="1123000" />
       <workItem from="1743873134206" duration="137000" />
       <workItem from="1743962819757" duration="399000" />
+      <workItem from="1744030949347" duration="2923000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />

@@ -17,7 +17,9 @@ import ua.tqs.model.Booking;
 import ua.tqs.model.BookingStatus;
 import ua.tqs.repository.BookingRepository;
 
-import static org.hamcrest.Matchers.equalTo;
+import java.util.Arrays;
+
+import static org.hamcrest.Matchers.*;
 
 
 @SpringBootTest(classes = MealReservationApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -75,6 +77,36 @@ public class BookingControllerTestIT {
                 .body("status", equalTo(booking.getStatus().toString()))
                 .body("week", equalTo(booking.getWeek()))
                 .body("createdAt", equalTo(booking.getCreatedAt()));
+    }
+
+    @Test
+    void whenGetBookings_thenStatus200() {
+        Booking booking1 = new Booking();
+        booking1.setDayIndex(3);
+        booking1.setEmail("test@example.com");
+        booking1.setRestaurant("Castro");
+        booking1.setStatus(BookingStatus.CONFIRMED);
+        booking1.setWeek("13");
+
+        Booking booking2 = new Booking();
+        booking2.setDayIndex(4);
+        booking2.setEmail("test@example.com");
+        booking2.setRestaurant("Santiago");
+        booking2.setStatus(BookingStatus.CONFIRMED);
+        booking2.setWeek("13");
+
+        bookingRepository.saveAll(Arrays.asList(booking1, booking2));
+
+
+        RestAssured.when().get(BASE_URL)
+                .then().statusCode(HttpStatus.OK.value())
+                .body("", hasSize(2))
+                .body("dayIndex", hasItems(booking1.getDayIndex(), booking2.getDayIndex()))
+                .body("email", hasItems(booking1.getEmail(), booking2.getEmail()))
+                .body("restaurant", hasItems(booking1.getRestaurant(), booking2.getRestaurant()))
+                .body("status", hasItems(booking1.getStatus().toString(), booking2.getStatus().toString()))
+                .body("week", hasItems(booking1.getWeek(), booking2.getWeek()))
+                .body("createdAt", hasItems(booking1.getCreatedAt(), booking2.getCreatedAt()));
     }
 
 }
