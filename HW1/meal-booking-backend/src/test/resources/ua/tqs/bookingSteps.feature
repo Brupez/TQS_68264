@@ -1,6 +1,6 @@
 Feature: Meal Reservation
 
-  Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking
+  Scenario: Select a restaurant, a day, insert email and book a meal
     Given I navigate to "http://localhost"
     When In restaurant Castro I select the week 13 on day 2
     And I fill in with email "bruno@gmail.com"
