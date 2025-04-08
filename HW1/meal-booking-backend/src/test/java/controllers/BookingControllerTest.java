@@ -26,7 +26,7 @@ import static org.mockito.Mockito.*;
 
 @WebMvcTest(BookingController.class)
 @ContextConfiguration(classes = MealReservationApplication.class)
-public class BookingControllerTest {
+class BookingControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

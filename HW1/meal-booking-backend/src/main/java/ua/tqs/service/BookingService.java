@@ -34,7 +34,7 @@ public class BookingService {
     public void cancelBooking(Long id, String email) {
         List<Booking> booking = bookingRepository.findByIdAndEmail(id, email);
         if (booking.isEmpty()) {
-            throw new RuntimeException("Booking not found");
+            throw new IllegalArgumentException("Booking not found");
         }
         Booking bookingCancelled = booking.get(0);
         bookingCancelled.setStatus(BookingStatus.CANCELLED);
