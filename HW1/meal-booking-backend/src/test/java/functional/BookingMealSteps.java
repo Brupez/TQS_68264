@@ -63,4 +63,36 @@ public class BookingMealSteps {
         bookingAlert.accept();
     }
 
+    @When("I fill email {string}")
+    public void iFillEmail(String email) {
+        WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("input[type='email']")));
+        emailField.sendKeys(email);
+
+        WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Search']")));
+        searchButton.click();
+    }
+
+    @And("I click on my last booking")
+    public void iClickOnMyLastBooking() {
+        WebElement lastBooking = wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector(".space-y-4 > div:first-child")));
+        lastBooking.click();
+    }
+
+    @And("I click the cancel button")
+    public void iClickTheCancelButton() {
+        WebElement cancelButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Cancel Booking']")));
+        cancelButton.click();
+    }
+
+    @Then("I should see the message {string}")
+    public void iShouldSeeTheCancelMessage(String message) {
+        WebElement messageElement = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector(".text-red-700")));
+        String actualMessage = messageElement.getText();
+        assertThat(actualMessage).isEqualTo(message);
+    }
 }

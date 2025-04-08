@@ -3,6 +3,7 @@ package ua.tqs.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,6 +27,7 @@ public class APIService {
         this.statsService = statsService;
     }
 
+    @Cacheable("weathers")
     public Map<String, Object> getWeather(String city) {
         try {
             logger.info("Get weather for city: {}", city);

@@ -11,5 +11,5 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
 mvn clean verify sonar:sonar \
   -Dsonar.projectKey=HW1 \
   -Dsonar.projectName='HW1' \
-  -Dsonar.host.url=http://localhost:9001 \
-  -Dsonar.token=sqp_622b52d0f238668e374c001a0bcae40c7b952b1b
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_337d43d121b527eb7c192ede54a6d6c027c7c38d

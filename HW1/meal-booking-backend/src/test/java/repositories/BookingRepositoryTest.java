@@ -1,6 +1,8 @@
 package repositories;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,12 +19,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @ContextConfiguration(classes = MealReservationApplication.class)
 class BookingRepositoryTest {
+    private static final Logger logger = LoggerFactory.getLogger(BookingRepositoryTest.class);
 
     @Autowired
     private BookingRepository bookingRepository;
 
     @Test
     void findBookingByEmail_thenReturnBooking() {
+        logger.debug("Starting test: find booking by email");
+
         Booking booking = new Booking();
         booking.setId(2L);
         booking.setCreatedAt(LocalDateTime.now());
@@ -33,7 +38,11 @@ class BookingRepositoryTest {
         booking.setWeek("13");
 
         bookingRepository.save(booking);
+
+        logger.debug("Searching for booking with email: {}", booking.getEmail());
         List<Booking> found = bookingRepository.findByEmail(booking.getEmail());
+
+        logger.debug("Found {} booking(s) with email: {}", found.size(), booking.getEmail());
         assertThat(found)
                 .hasSize(1)
                 .extracting(Booking::getEmail)
@@ -41,9 +50,10 @@ class BookingRepositoryTest {
                 );
     }
 
-
     @Test
     void findBookingByIdandEmail_thenReturnBooking() {
+        logger.info("Starting test: find booking by ID and email");
+
         Booking booking1 = new Booking();
         booking1.setId(1L);
         booking1.setCreatedAt(LocalDateTime.now());
@@ -74,6 +84,7 @@ class BookingRepositoryTest {
         List<Booking> bookings = bookingRepository.saveAll(List.of(booking1, booking2, booking3));
 
         for (Booking booking : bookings) {
+            logger.info("Searching for booking with ID: {} and email: {}", booking.getId(), booking.getEmail());
             List<Booking> found = bookingRepository.findByIdAndEmail(booking.getId(), booking.getEmail());
             assertThat(found)
                     .hasSize(1)
@@ -83,7 +94,9 @@ class BookingRepositoryTest {
 
     @Test
     void whenInvalidBookingEmail_thenReturnNull() {
+        logger.info("Starting test: find booking by invalid email");
         Booking booking = bookingRepository.findById(-111L).orElse(null);
+        logger.info("Search result for invalid ID: {}", booking == null ? "null" : "found");
         assertThat(booking).isNull();
     }
 }
