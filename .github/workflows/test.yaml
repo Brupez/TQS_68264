@@ -27,6 +27,5 @@ jobs:
       - name: Run integration tests
         run: |
           cd HW1/meal-booking-backend
-          sudo mvn clean test -Dtest=BookingControllerTestIT
-
+          sudo mvn clean failsafe:integration-test verify sonar:sonar -Dsonar.projectKey=HW1   -Dsonar.projectName='HW1'   -Dsonar.host.url=http://localhost:9000   -Dsonar.token=sqp_337d43d121b527eb7c192ede54a6d6c027c7c38d
 

@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="coverage being better">
-      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers/RestaurantControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="More testing to Booking and cache">
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/models/StatsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/config/CachingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/config/CachingConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/controller/HealthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/model/StatsHealth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/service/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/service/APIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers/BookingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers/BookingControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/APIServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/APIServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/BookingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/BookingServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/StatsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/StatsServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +232,8 @@
       <workItem from="1744039026304" duration="60000" />
       <workItem from="1744046377257" duration="13524000" />
       <workItem from="1744106723754" duration="8309000" />
-      <workItem from="1744115049243" duration="4117000" />
+      <workItem from="1744115049243" duration="4505000" />
+      <workItem from="1744122585881" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />
@@ -289,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744108990785</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="More testing to Booking and cache">
+      <option name="closed" value="true" />
+      <created>1744121127254</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744121127255</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +304,8 @@
     <MESSAGE value="cucumber" />
     <MESSAGE value="add logs" />
     <MESSAGE value="coverage being better" />
-    <option name="LAST_COMMIT_MESSAGE" value="coverage being better" />
+    <MESSAGE value="More testing to Booking and cache" />
+    <option name="LAST_COMMIT_MESSAGE" value="More testing to Booking and cache" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HW1$TestBackendApplication.ic" NAME="TestBackendApplication Coverage Results" MODIFIED="1743870793790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
