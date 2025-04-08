@@ -29,7 +29,6 @@ class BookingRepositoryTest {
         logger.debug("Starting test: find booking by email");
 
         Booking booking = new Booking();
-        booking.setId(2L);
         booking.setCreatedAt(LocalDateTime.now());
         booking.setDayIndex(2);
         booking.setEmail("bruno@gmail.com");
@@ -45,9 +44,16 @@ class BookingRepositoryTest {
         logger.debug("Found {} booking(s) with email: {}", found.size(), booking.getEmail());
         assertThat(found)
                 .hasSize(1)
-                .extracting(Booking::getEmail)
-                .contains(booking.getEmail()
-                );
+                .first()
+                .satisfies(foundBooking -> {
+                    assertThat(foundBooking.getId()).isEqualTo(booking.getId());
+                    assertThat(foundBooking.getEmail()).isEqualTo(booking.getEmail());
+                    assertThat(foundBooking.getRestaurant()).isEqualTo(booking.getRestaurant());
+                    assertThat(foundBooking.getWeek()).isEqualTo(booking.getWeek());
+                    assertThat(foundBooking.getDayIndex()).isEqualTo(booking.getDayIndex());
+                    assertThat(foundBooking.getStatus()).isEqualTo(booking.getStatus());
+                    assertThat(foundBooking.getCreatedAt()).isEqualTo(booking.getCreatedAt());
+                });
     }
 
     @Test

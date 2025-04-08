@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="bindingEnabled" value="true" />
+    <option name="projectKey" value="sqp_337d43d121b527eb7c192ede54a6d6c027c7c38d" />
+    <option name="serverId" value="HW1_Sonarqube" />
+  </component>
+</project>

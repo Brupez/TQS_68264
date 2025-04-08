@@ -10,7 +10,7 @@ import ua.tqs.service.StatsService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-public class StatsServiceTest {
+class StatsServiceTest {
     @InjectMocks
     private StatsService statsService;
 
