@@ -24,8 +24,6 @@ public class BookingMealSteps {
     public void iNavigateTo(String url) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -70,7 +68,7 @@ public class BookingMealSteps {
     @When("I fill email {string}")
     public void iFillEmail(String email) {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("input[type='email']")));
+                By.cssSelector("input[placeholder='Enter your email']")));
         emailField.clear();
         emailField.sendKeys(email);
 
@@ -99,12 +97,5 @@ public class BookingMealSteps {
                 By.cssSelector(".text-red-700")));
         String actualMessage = messageElement.getText();
         assertThat(actualMessage).isEqualTo(message);
-    }
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }
