@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="More testing to Booking and cache">
-      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/performance/meal-booking-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-frontend/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="performance testing with k6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +235,7 @@
       <workItem from="1744188887105" duration="657000" />
       <workItem from="1744189574024" duration="649000" />
       <workItem from="1744190505110" duration="1627000" />
-      <workItem from="1744194989393" duration="1359000" />
+      <workItem from="1744194989393" duration="1684000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />
@@ -302,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744121127255</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="performance testing with k6">
+      <option name="closed" value="true" />
+      <created>1744196554016</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744196554016</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +315,8 @@
     <MESSAGE value="add logs" />
     <MESSAGE value="coverage being better" />
     <MESSAGE value="More testing to Booking and cache" />
-    <option name="LAST_COMMIT_MESSAGE" value="More testing to Booking and cache" />
+    <MESSAGE value="performance testing with k6" />
+    <option name="LAST_COMMIT_MESSAGE" value="performance testing with k6" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HW1$TestBackendApplication.ic" NAME="TestBackendApplication Coverage Results" MODIFIED="1743870793790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
