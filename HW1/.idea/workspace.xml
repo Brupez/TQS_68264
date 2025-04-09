@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="More testing to Booking and cache">
-      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/models/StatsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/performance/meal-booking-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/BookingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/BookingServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/StatsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/services/StatsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
     &quot;Cucumber Java.Scenario: Cancel an existing booking.executor&quot;: &quot;Run&quot;,
     &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email and book a meal.executor&quot;: &quot;Coverage&quot;,
     &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.BookingControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.MealDTOTest.executor&quot;: &quot;Coverage&quot;,
@@ -73,7 +78,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend/src/main/java/ua/tqs/dto&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/report&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/lab5/lab5_1calculator&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,10 +99,11 @@
       <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/java/controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/java/performance" />
       <recent name="$PROJECT_DIR$/meal-booking-backend/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MealDTOTest">
+  <component name="RunManager" selected="Cucumber Java.Feature: bookingSteps">
     <configuration name="Feature: bookingSteps" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" />
@@ -155,15 +161,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" />
-      <option name="GLUE" value="ua.tqs.functional" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="HW1" />
-      <option name="NAME_FILTER" value="^Select a restaurant\, a day\, insert email\, book a meal\, check bookings\, and cancel one booking$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Select a restaurant\, a day\, insert email\, book a meal\, check bookings\, and cancel one booking$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking" />
+      <option name="NAME_FILTER" value="^Select a restaurant\, a day\, insert email\,book a meal and check confirmation$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Select a restaurant\, a day\, insert email\,book a meal and check confirmation$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -200,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: bookingSteps" />
+        <item itemvalue="Cucumber Java.Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation" />
         <item itemvalue="JUnit.MealDTOTest" />
         <item itemvalue="Cucumber Java.Scenario: Cancel an existing booking" />
         <item itemvalue="Cucumber Java.Scenario: Select a restaurant, a day, insert email and book a meal" />
-        <item itemvalue="Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking" />
-        <item itemvalue="Cucumber Java.Feature: bookingSteps" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +239,12 @@
       <workItem from="1744106723754" duration="8309000" />
       <workItem from="1744115049243" duration="4505000" />
       <workItem from="1744122585881" duration="890000" />
+      <workItem from="1744129583392" duration="2782000" />
+      <workItem from="1744139800485" duration="201000" />
+      <workItem from="1744188887105" duration="657000" />
+      <workItem from="1744189574024" duration="649000" />
+      <workItem from="1744190505110" duration="1627000" />
+      <workItem from="1744194989393" duration="1359000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />

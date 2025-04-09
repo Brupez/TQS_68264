@@ -1,5 +1,6 @@
 package functional;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -12,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookingMealSteps {
 
@@ -23,11 +24,14 @@ public class BookingMealSteps {
     public void iNavigateTo(String url) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get(url);
     }
+
 
     @When("In restaurant Castro I select the week {int} on day {int}")
     public void iSelectWeekAndDay(int week, int day) {
@@ -44,6 +48,7 @@ public class BookingMealSteps {
     public void iFillInWithEmail(String email) {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("input[type='email']")));
+        emailField.clear();
         emailField.sendKeys(email);
     }
 
@@ -58,7 +63,6 @@ public class BookingMealSteps {
     public void iShouldSeeTheMessage(String message) {
         Alert bookingAlert = wait.until(ExpectedConditions.alertIsPresent());
         String alertText = bookingAlert.getText();
-
         assertThat(alertText).isEqualTo(message);
         bookingAlert.accept();
     }
@@ -67,6 +71,7 @@ public class BookingMealSteps {
     public void iFillEmail(String email) {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("input[type='email']")));
+        emailField.clear();
         emailField.sendKeys(email);
 
         WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
@@ -88,11 +93,18 @@ public class BookingMealSteps {
         cancelButton.click();
     }
 
-    @Then("I should see the message {string}")
+    @Then("I should see the cancel message {string}")
     public void iShouldSeeTheCancelMessage(String message) {
         WebElement messageElement = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector(".text-red-700")));
         String actualMessage = messageElement.getText();
         assertThat(actualMessage).isEqualTo(message);
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
