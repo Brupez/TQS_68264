@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="performance testing with k6" />
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="performance testing with k6">
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/controller/HealthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/model/StatsHealth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/controller/RestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/dto/MealDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/main/java/ua/tqs/dto/MealDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/dto/MealDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/dto/MealDTOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/CucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/CucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +245,7 @@
       <workItem from="1744188887105" duration="657000" />
       <workItem from="1744189574024" duration="649000" />
       <workItem from="1744190505110" duration="1627000" />
-      <workItem from="1744194989393" duration="1684000" />
+      <workItem from="1744194989393" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />
@@ -301,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744196554016</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="performance testing with k6">
+      <option name="closed" value="true" />
+      <created>1744197197705</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744197197705</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
