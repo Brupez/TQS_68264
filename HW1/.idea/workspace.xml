@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="cucumber update">
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="cucumber working properly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/BookingMealSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/CucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/java/functional/CucumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/ua/tqs/bookingSteps.feature" beforeDir="false" afterPath="$PROJECT_DIR$/meal-booking-backend/src/test/resources/functional/bookingSteps.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,46 +46,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.Feature: bookingSteps (1).executor": "Run",
-    "Cucumber Java.Feature: bookingSteps.executor": "Run",
-    "Cucumber Java.Scenario: Cancel an existing booking.executor": "Run",
-    "Cucumber Java.Scenario: Select a restaurant, a day, insert email and book a meal.executor": "Coverage",
-    "Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor": "Run",
-    "Cucumber Java.Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation.executor": "Run",
-    "JUnit.BookingControllerTest.executor": "Run",
-    "JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor": "Run",
-    "JUnit.MealDTOTest.executor": "Coverage",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.MealReservationApplication.executor": "Run",
-    "Spring Boot.TestBackendApplication.executor": "Coverage",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend/src/main/java/ua/tqs/dto",
-    "last_opened_file_path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/lab5/lab5_1calculator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1150748",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: bookingSteps (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: bookingSteps.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Cancel an existing booking.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email and book a meal.executor&quot;: &quot;Coverage&quot;,
+    &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email, book a meal, check bookings, and cancel one booking.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Select a restaurant, a day, insert email,book a meal and check confirmation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookingControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookingControllerTest.whenPostBooking_thenReturnBooking.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MealDTOTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MealReservationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TestBackendApplication.executor&quot;: &quot;Coverage&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-backend/src/main/java/ua/tqs/dto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/lab5/lab5_1calculator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/report" />
