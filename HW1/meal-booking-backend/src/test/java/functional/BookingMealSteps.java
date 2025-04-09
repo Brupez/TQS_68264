@@ -1,6 +1,5 @@
 package functional;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -13,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class BookingMealSteps {
 
@@ -24,11 +23,9 @@ public class BookingMealSteps {
     public void iNavigateTo(String url) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         driver.get(url);
     }
 
@@ -48,7 +45,6 @@ public class BookingMealSteps {
     public void iFillInWithEmail(String email) {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("input[type='email']")));
-        emailField.clear();
         emailField.sendKeys(email);
     }
 
@@ -71,7 +67,6 @@ public class BookingMealSteps {
     public void iFillEmail(String email) {
         WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("input[type='email']")));
-        emailField.clear();
         emailField.sendKeys(email);
 
         WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
@@ -99,12 +94,5 @@ public class BookingMealSteps {
                 By.cssSelector(".text-red-700")));
         String actualMessage = messageElement.getText();
         assertThat(actualMessage).isEqualTo(message);
-    }
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }

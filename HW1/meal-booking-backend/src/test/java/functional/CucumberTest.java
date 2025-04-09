@@ -9,8 +9,8 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("ua/tqs")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "ua.tqs")
+@SelectClasspathResource("functional")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "functional")
 public class CucumberTest {
 }
 
