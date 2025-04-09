@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ua.tqs.dto.MealDTO;
 
-import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,12 +15,10 @@ class MealDTOTest {
     void whenConvertMealEntityToDTO_thenCorrect() {
         logger.debug("Testing conversion from Meal entity to DTO");
 
-        LocalDate date = LocalDate.now();
         MealDTO mealDTO = new MealDTO(
                 1L,
                 "Pasta",
                 "Fresh pasta",
-                date,
                 "Castro",
                 25,
                 "Sunny",
@@ -31,7 +28,6 @@ class MealDTOTest {
         assertThat(mealDTO.getId()).isEqualTo(1L);
         assertThat(mealDTO.getName()).isEqualTo("Pasta");
         assertThat(mealDTO.getDescription()).isEqualTo("Fresh pasta");
-        assertThat(mealDTO.getDate()).isEqualTo(date);
         assertThat(mealDTO.getRestaurantName()).isEqualTo("Castro");
         assertThat(mealDTO.getTemperature()).isEqualTo(25);
         assertThat(mealDTO.getWeatherCondition()).isEqualTo("Sunny");
@@ -41,12 +37,10 @@ class MealDTOTest {
     void whenUseSettersAndGetters_thenCorrect() {
         logger.debug("Testing DTO setters and getters");
 
-        LocalDate date = LocalDate.now();
         MealDTO mealDTO = new MealDTO();
         mealDTO.setId(1L);
         mealDTO.setName("Salad");
         mealDTO.setDescription("Fresh garden salad");
-        mealDTO.setDate(date);
         mealDTO.setRestaurantName("Castro");
         mealDTO.setTemperature(22);
         mealDTO.setWeatherCondition("Cloudy");
@@ -56,7 +50,6 @@ class MealDTOTest {
         assertThat(mealDTO.getId()).isEqualTo(1L);
         assertThat(mealDTO.getName()).isEqualTo("Salad");
         assertThat(mealDTO.getDescription()).isEqualTo("Fresh garden salad");
-        assertThat(mealDTO.getDate()).isEqualTo(date);
         assertThat(mealDTO.getRestaurantName()).isEqualTo("Castro");
         assertThat(mealDTO.getTemperature()).isEqualTo(22);
         assertThat(mealDTO.getWeatherCondition()).isEqualTo("Cloudy");

@@ -1,12 +1,10 @@
 package ua.tqs.dto;
 
-import java.time.LocalDate;
 
 public class MealDTO {
     private Long id;
     private String name;
     private String description;
-    private LocalDate date;
     private String restaurantName;
     private int temperature;
     private String weatherCondition;
@@ -14,12 +12,11 @@ public class MealDTO {
 
     public MealDTO() {}
 
-    public MealDTO(Long id, String name, String description, LocalDate date, 
+    public MealDTO(Long id, String name, String description, 
                   String restaurantName, int temperature, String weatherCondition, int humidity) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.date = date;
         this.restaurantName = restaurantName;
         this.temperature = temperature;
         this.weatherCondition = weatherCondition;
@@ -48,14 +45,6 @@ public class MealDTO {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public String getRestaurantName() {
