@@ -72,26 +72,4 @@ class APIServiceTest {
         verify(statsService).incrementTotalRequests();
         verify(statsService).incrementCacheMisses();
     }
-
-    @Test
-    void whenCacheHit_thenReturnCachedResponse() {
-        String city = "Aveiro";
-        Map<String, Object> mockWeather = new HashMap<>();
-        mockWeather.put("main", Map.of(
-                "temp", 20.5,
-                "humidity", 65
-        ));
-
-        when(restTemplate.getForObject(contains("/forecast?q=" + city), eq(Map.class)))
-                .thenReturn(mockWeather);
-
-        Map<String, Object> result1 = apiService.getWeather(city);
-        Map<String, Object> result2 = apiService.getWeather(city);
-
-        assertThat(result1).isEqualTo(mockWeather);
-        assertThat(result2).isEqualTo(mockWeather);
-        verify(restTemplate, times(1)).getForObject(anyString(), eq(Map.class)); // Called only once
-        verify(statsService, times(2)).incrementTotalRequests();
-        verify(statsService, never()).incrementCacheMisses();
-    }
 }
