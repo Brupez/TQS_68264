@@ -46,8 +46,7 @@ public class BookingController {
     public ResponseEntity<List<Booking>> getBookingsByEmail(
             @RequestParam String email) {
         List<Booking> bookings = bookingService.getBookingByEmail(email);
-        HttpStatus status = bookings.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK;
-        return new ResponseEntity<>(bookings, status);
+        return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
     @PutMapping("/{id}/cancel")
@@ -60,11 +59,8 @@ public class BookingController {
     public ResponseEntity<Booking> cancelBooking(
             @PathVariable Long id,
             @RequestParam String email) {
-        try {
-            bookingService.cancelBooking(id, email);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
+        bookingService.cancelBooking(id, email);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
