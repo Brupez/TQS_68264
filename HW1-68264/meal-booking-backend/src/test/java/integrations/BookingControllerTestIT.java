@@ -36,7 +36,7 @@ public class BookingControllerTestIT {
             .withDatabaseName("mealreservationTest");
 
 
-    String BASE_URL;
+    String baseUrl;
 
     @LocalServerPort
     int randomServerPort;
@@ -53,7 +53,7 @@ public class BookingControllerTestIT {
 
     @BeforeEach
     void setUp() {
-        BASE_URL = "http://localhost:" + randomServerPort + "/api/bookings";
+        baseUrl = "http://localhost:" + randomServerPort + "/api/bookings";
     }
 
     @AfterEach
@@ -72,7 +72,7 @@ public class BookingControllerTestIT {
         booking.setWeek("13");
 
         RestAssured.given().contentType(ContentType.JSON).body(booking)
-                .when().post(BASE_URL)
+                .when().post(baseUrl)
                 .then().statusCode(HttpStatus.CREATED.value())
                 .body("dayIndex", equalTo(booking.getDayIndex()))
                 .body("email", equalTo(booking.getEmail()))
@@ -102,7 +102,7 @@ public class BookingControllerTestIT {
 
         bookingRepository.saveAll(List.of(booking1, booking2));
 
-        RestAssured.when().get(BASE_URL + "?email=" + booking1.getEmail())
+        RestAssured.when().get(baseUrl + "?email=" + booking1.getEmail())
                 .then().statusCode(HttpStatus.OK.value())
                 .body("", hasSize(2))
                 .body("dayIndex", hasItems(booking1.getDayIndex(), booking2.getDayIndex()))
@@ -116,7 +116,7 @@ public class BookingControllerTestIT {
     @Test
     @Order(3)
     void whenGetBookingByInvalidEmail_thenStatus404() {
-        RestAssured.when().get(BASE_URL + "?email=naoexiste@gmail.com")
+        RestAssured.when().get(baseUrl + "?email=naoexiste@gmail.com")
                 .then().statusCode(HttpStatus.NOT_FOUND.value());
     }
 
@@ -133,7 +133,7 @@ public class BookingControllerTestIT {
 
         booking = bookingRepository.save(booking);
 
-        RestAssured.when().put(BASE_URL + "/" + booking.getId() + "/cancel?email=" + booking.getEmail())
+        RestAssured.when().put(baseUrl + "/" + booking.getId() + "/cancel?email=" + booking.getEmail())
                 .then().statusCode(HttpStatus.OK.value());
 
         Booking found = bookingRepository.findByIdAndEmail(booking.getId(), booking.getEmail())
