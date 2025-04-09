@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="clean house">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="790bd6e5-f093-4cfc-9914-b24ac96d4d16" name="Changes" comment="issue sonarqube" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +82,7 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1150748",
+    "project.structure.side.proportion": "0.2689655",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/bruno-lopes/Desktop/TQS/TQS_68264/HW1/meal-booking-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -257,6 +250,7 @@
       <workItem from="1744199849021" duration="292000" />
       <workItem from="1744229442978" duration="1037000" />
       <workItem from="1744230996653" duration="2396000" />
+      <workItem from="1744234536509" duration="577000" />
     </task>
     <task id="LOCAL-00001" summary="cleaning project">
       <option name="closed" value="true" />
@@ -378,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744233281173</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="issue sonarqube">
+      <option name="closed" value="true" />
+      <created>1744235106213</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744235106213</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +412,8 @@
     <MESSAGE value="assertThat import" />
     <MESSAGE value="APIServiceTest.java improved" />
     <MESSAGE value="clean house" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean house" />
+    <MESSAGE value="issue sonarqube" />
+    <option name="LAST_COMMIT_MESSAGE" value="issue sonarqube" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HW1$TestBackendApplication.ic" NAME="TestBackendApplication Coverage Results" MODIFIED="1743870793790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
