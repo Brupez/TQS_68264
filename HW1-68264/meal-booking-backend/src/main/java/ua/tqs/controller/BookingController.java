@@ -46,7 +46,8 @@ public class BookingController {
     public ResponseEntity<List<Booking>> getBookingsByEmail(
             @RequestParam String email) {
         List<Booking> bookings = bookingService.getBookingByEmail(email);
-        return new ResponseEntity<>(bookings, HttpStatus.OK);
+        HttpStatus status = bookings.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK;
+        return new ResponseEntity<>(bookings, status);
     }
 
     @PutMapping("/{id}/cancel")
