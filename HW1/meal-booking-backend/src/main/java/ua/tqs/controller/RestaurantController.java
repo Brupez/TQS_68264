@@ -70,7 +70,6 @@ public class RestaurantController {
                 meal.setName("Daily Menu");
                 meal.setDescription(restaurantMenus.get(name).get(day));
                 LocalDate date = LocalDate.now().plusDays(day);
-                meal.setDate(date);
                 meal.setRestaurantName(name);
 
                 // Get forecast for this specific day (at noon)
