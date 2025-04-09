@@ -6,28 +6,121 @@ on:
       - master 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest 
-
+  setup:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v3
 
       - name: Set up JDK 23
-        uses: actions/setup-java@v2  
+        uses: actions/setup-java@v3
         with:
           java-version: '23'  
           distribution: 'temurin'  
+          cache: 'maven'
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+
+  unit-tests:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: 'maven'
+      
       - name: Run unit tests
         run: |
           cd HW1/meal-booking-backend  
           sudo mvn clean test
-      - name: Run Functional tests
-        run: |
-          cd HW1/meal-booking-backend  
-          sudo mvn -Dtest=CucumberTest test
+
+  integration-tests:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: 'maven'
+      
       - name: Run integration tests
         run: |
           cd HW1/meal-booking-backend
-          sudo mvn clean failsafe:integration-test verify
+          mvn test -Dtest=**/*IT.java
+
+  cucumber-tests:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+
+      - name: Start Application with Docker Compose
+        run: |
+          cd HW1/meal-booking-backend
+          docker compose up -d
+          # Wait for containers to be ready
+          echo "Waiting for containers to be ready..."
+          for i in {1..200}; do
+            if curl -s http://localhost:8080/health 2>&1 | grep -q "UP"; then
+              echo "Application is up!"
+              break
+            fi
+            if [ $i -eq 200 ]; then
+              echo "Application failed to start"
+              docker compose logs
+              exit 1
+            fi
+            echo "Waiting... ($i/200)"
+            sleep 2
+          done
+
+      - name: Run Cucumber tests
+        run: |
+          cd HW1/meal-booking-backend
+          mvn test -Dtest=CucumberTest
+
+      - name: Print Container Logs (if tests fail)
+        if: failure()
+        run: |
+          cd HW1/meal-booking-backend
+          docker compose logs
+
+      - name: Cleanup
+        if: always()
+        run: |
+          cd HW1/meal-booking-backend
+          docker compose down -v
+
+  build:
+    needs: [unit-tests, integration-tests, cucumber-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Build package
+        run: |
+          cd HW1/meal-booking-backend
+          mvn package -DskipTests
