@@ -74,8 +74,6 @@ jobs:
 
       - name: Start Application with Docker Compose
         run: |
-          touch .env || true
-          cd HW1/meal-booking-backend
           docker compose up -d
           # Wait for containers to be ready
           echo "Waiting for containers to be ready..."
